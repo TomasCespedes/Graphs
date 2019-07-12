@@ -1,7 +1,15 @@
-## Graphs
-
+# Graphs
+  In this repository there are some common implementations for sets of objects connected together in some manner known as graphs. The three that I have implemented are directed graph, a weighted graph, and a normal graph. These can be found within the ImplementedGraphs directory. Each "node" is considered a vertex and they are connected to other nodes by edges. If one vertex is connected to another then they are considered neighbors. In the examples folder, there are some examples that will be explained that utilize the graphs and other data structures to solve specific problems. 
+  
 ## Implemented Graphs
-The folder labeled implemented graphs contains a normal graph, weighted graph, and directed graph that I had to implement for a class during my sophomore year. Within each of the graphs, they have some common algorithms implemented such as Breadth First search, Prim's Algorithm, Topological sort, etc... These were the folders I used to implement some algorithms that gave us information based on whatever the user wants to solve. 
+### Graph
+  The first graph that is implemented is just a regular graph that is depicted as a dictionary of neighbors where the vertex is the key and it's value is a set of it's neighbors. We want to use a set here because the order does not matter and we can locate items in constant time. The Graph class has depth first search implemented which adds all vertices reachable from any vertex to a "marks" set. It also has breadth first search which maps all vertices to their parents along the shortest path from any vertex.
 
+### Directed Graph
+  The difference between a directed graph and a regular graph is that the directed graph has a direction to it. So if a vertex U has a neighbor V, that does not ensure that V has the neighbor U. The directed graph class also has a depth first search implementation. Since we have a direction, we can implement a topsort algorithm which returns a topolgocial ordering of vertices. An example of a topological sort can be found below. A directed graph can also be reversed which is simply just switching keys and the values in the dictionary. Since we have a direction, it can be useful for some problems to find where the root node is which is also implemented. 
+  
+### Weighted Graph
+
+  
 ## Examples
 The examples contains huffmanTree.py, kclique.py, and transform.py. The Huffman Tree is implemented within the first file which builds a huffman tree based on given frequency inputs. The second file ultizes the normal graph implementation which finds if a certain graph has a clique of k size and returns True or False. The third file is a words transformer which if the user inputs a source word and a target word, it takes the user through the steps of changing that source word to the input word. This only works if both words are real words. 
