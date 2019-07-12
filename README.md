@@ -8,15 +8,16 @@
 ### Directed Graph
   The difference between a directed graph and a regular graph is that the directed graph has a direction to it. So if a vertex U has a neighbor V, that does not ensure that V has the neighbor U. The directed graph class also has a depth first search implementation. Since we have a direction, we can implement a topsort algorithm which returns a topolgocial ordering of vertices. An example of a topological sort can be found below. A directed graph can also be reversed which is simply just switching keys and the values in the dictionary. Since we have a direction, it can be useful for some problems to find where the root node is which is also implemented. An example of a directed graph can be found below.
   
-   
  <p align="center">
   <img width="460" height="300" src="https://user-images.githubusercontent.com/35609863/61159886-99f81700-a4cb-11e9-81af-43d904293701.png">
 </p>
  
 ### Weighted Graph
   A weighted graph is a graph that does not have direction, but has values over each edge. Since each neighbor share one edge, the weight from vertex U to vertex V is the same as from V to U. The weighted graph class has Dijkstra's algorithm implemented which finds the least cost path from V to its parents. In addition to Dijkstra's, Prim's is also a part of the weighted graph class. Prim's algorithm finds the minimum spanning tree but it is greedy. As a result, it sometimes goes over the same vertex more than once and we lose some computational efficency. An example of a weighted graph can be found below.   
-
-  ![image](https://user-images.githubusercontent.com/35609863/61159908-b09e6e00-a4cb-11e9-9b66-b44f2a024d95.png =250x250)
+  
+  <p align="center">
+  <img width="460" height="300" src="https://user-images.githubusercontent.com/35609863/61159908-b09e6e00-a4cb-11e9-9b66-b44f2a024d95.png">
+</p>
 
   
 ## Examples
