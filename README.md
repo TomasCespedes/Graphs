@@ -26,7 +26,8 @@ The examples contains huffmanTree.py, kclique.py, and transform.py. The Huffman 
 
 
 
+## Credit
 
-<sup>Directed Graph: https://www.geeksforgeeks.org/euler-circuit-directed-graph/ </sup>
+Directed Graph: https://www.geeksforgeeks.org/euler-circuit-directed-graph/
 
-<sup>Weighted Graph: https://hyperskill.org/learn/step/5645 </sup>
+Weighted Graph: https://hyperskill.org/learn/step/5645
