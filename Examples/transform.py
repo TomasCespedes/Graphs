@@ -10,7 +10,7 @@ words = set(open("words", "r").read().split())
 vertices = set()
 edges = set()
 
-# Initalize our alphabet dictionary
+# Initialize our alphabet dictionary
 alphabetdictionary = {'1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e',
                       '6': 'f', '7': 'g', '8': 'h', '9': 'i', '10': 'j',
                       '11': 'k', '12': 'l', '13': 'm', '14': 'n', '15': 'o',
@@ -23,19 +23,28 @@ alphabetdictionary = {'1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e',
 # Make each word a vertex
 while len(words) > 0:
 
-    #
+    # Get random word from words file
     word = words.pop()
+    # save the word as a list
     temp_word = list(word)
+    # add word in vertices
     vertices.add(word)
 
+    # Go through each letter in the world
     for letter in range(len(temp_word)):
 
+        # Iterate through each letter of alphabet
         for c in alphabetdictionary.values():
+            # Change temp word letter by each character
             temp_word[letter] = c
+            # create a string from new word
             new_word = ''.join(temp_word)
 
+            # If the new word is a real word
             if new_word in words:
+                # Add it to a list of vertices
                 vertices.add(new_word)
+                # connect it to original word as a neighbor
                 edges.add((word, new_word))
 
         temp_word = list(word)

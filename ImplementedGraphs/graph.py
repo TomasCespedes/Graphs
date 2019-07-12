@@ -17,48 +17,103 @@ class Graph(object):
             self.neighbors[v].add(u)
             self.neighbors[u].add(v)
 
-    # Return a set containing the components of this graph.
-    # Each component is a frozenset of vertices.
+
     def components(self):
+        """
+        Get a set containing all the components of this graph.
+        Each component is a frozenset of vertices.
+        :return: a set of the components of the graph.
+        """
+
+        # Initialize our sets
         components = set()
         allMarks = set()
+
+        # Iterate through all vertices
         for v in self.vertices:
+            # if vertex has not yet been seen
             if v not in allMarks:
+                # make new set
                 marks = set()
+                # run dfs from vertex to new set
                 self.dfs(v, marks)
+                # bitwise or operation
                 allMarks |= marks
+                # add marks set to components as frozen set
                 components.add(frozenset(marks))
+
         return components
 
-    # Return a string description of this graph
+
     def __str__(self):
+        """
+        String representation method.
+        :return: A string description of this graph.
+        """
+
+        # Initialize our string
         output = ""
+
+        # go through each vertex and its neighbors
         for v, neighbors in self.neighbors.items():
+            # concatenate string values
             output += str(v) + " -> " + str(neighbors) + "\n"
+
         return output
 
-    # Add all vertices reachable from v to the marks set
+
     def dfs(self, v, marks):
+        """
+        Depth First Search.
+        Add all vertices reachable from v to the marks set.
+        :param v: Vertex that we are currently looking at.
+        :param marks: the set of vertices we can reach
+        """
+
+        # Add the current vertex
         marks.add(v)
+        # Iterate through all the possible neighbors
         for u in self.neighbors[v]:
+            # If it has not yet been seen, add it to marks
             if u not in marks:
                 self.dfs(u, marks)
 
-    # Map all vertices to their parents along the shortest path from v
+
     def bfs(self, v, parents):
+        """
+        Breadth First Search.
+        Map all vertices to their parents along the shortest path from v.
+        :param v: the vertex we are currently at
+        :param parents: the parents of that vertex
+        """
+
+        # Update parent of v
         parents[v] = v
+        # Initialize our frontier
         frontier = deque()
+        # Add v to frontier
         frontier.append(v)
+        # Until we run out of nodes
         while len(frontier) > 0:
+            # Take vertex at front of deque
             p = frontier.popleft()
+            # Iterate through its neighbors
             for c in self.neighbors[p]:
+                # If it is not a parent
                 if c not in parents:
+                    # Update front most vertex's parent
                     parents[c] = p
+                    # add c to frontier
                     frontier.append(c)
 
-    # Return the shortest path to v from the root of a BFS tree
     @staticmethod
     def path(v, parents):
+        """
+
+        :param v: current vertex
+        :param parents: a list of parents
+        :return: Shortest path from to v from root of a BFS tree
+        """
         if v in parents:
             path = deque([v])
             while v != parents[v]:

@@ -17,9 +17,14 @@ class HuffmanTree(object):
         self.left = left
         self.right = right
 
-    # Needed because HuffmanTrees will get compared if their priorities tie
-    # Doesn't matter how we break the tie, just that we make them comparable
+
     def __lt__(self, other):
+        """
+        Needed because HuffmanTrees will get compared if their priorities tie
+        Doesn't matter how we break the tie, just that we make them comparable
+        :param other: other HuffmanTree
+        :return: true
+        """
         return True
 
 
@@ -29,15 +34,24 @@ class HuffmanTree(object):
         :param prefix: how all codes in this tree begin
         :return: Nothing
         """
+        # create tree
         treeDict = dict()
+
+        # if left side is not empty
         if (self.left != None):
+            # add a 0 place holder
             self.left.display(prefix + "0")
+        # else add empty spot
         else:
             treeDict[self.char] = prefix
+        # if right side is not empty
         if (self.right != None):
+            # add a 1 place holder
             return self.right.display(prefix + "1")
+        # else add empty spot
         else:
             treeDict[self.char] = prefix
+
         for y in treeDict:
             print(str(y) + ", " + treeDict[y])
 
