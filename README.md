@@ -6,9 +6,13 @@
   The first graph that is implemented is just a regular graph that is depicted as a dictionary of neighbors where the vertex is the key and it's value is a set of it's neighbors. We want to use a set here because the order does not matter and we can locate items in constant time. The Graph class has depth first search implemented which adds all vertices reachable from any vertex to a "marks" set. It also has breadth first search which maps all vertices to their parents along the shortest path from any vertex.
 
 ### Directed Graph
-  The difference between a directed graph and a regular graph is that the directed graph has a direction to it. So if a vertex U has a neighbor V, that does not ensure that V has the neighbor U. The directed graph class also has a depth first search implementation. Since we have a direction, we can implement a topsort algorithm which returns a topolgocial ordering of vertices. An example of a topological sort can be found below. A directed graph can also be reversed which is simply just switching keys and the values in the dictionary. Since we have a direction, it can be useful for some problems to find where the root node is which is also implemented. 
+  The difference between a directed graph and a regular graph is that the directed graph has a direction to it. So if a vertex U has a neighbor V, that does not ensure that V has the neighbor U. The directed graph class also has a depth first search implementation. Since we have a direction, we can implement a topsort algorithm which returns a topolgocial ordering of vertices. An example of a topological sort can be found below. A directed graph can also be reversed which is simply just switching keys and the values in the dictionary. Since we have a direction, it can be useful for some problems to find where the root node is which is also implemented. An example of a directed graph can be found below.
+  ![image](https://user-images.githubusercontent.com/35609863/61159886-99f81700-a4cb-11e9-81af-43d904293701.png)
   
 ### Weighted Graph
+  A weighted graph is a graph that does not have direction, but has values over each edge. Since each neighbor share one edge, the weight from vertex U to vertex V is the same as from V to U. The weighted graph class has Dijkstra's algorithm implemented which finds the least cost path from V to its parents.  
+
+![image](https://user-images.githubusercontent.com/35609863/61159908-b09e6e00-a4cb-11e9-9b66-b44f2a024d95.png)
 
   
 ## Examples
