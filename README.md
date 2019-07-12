@@ -2,6 +2,7 @@
   In this repository there are some common implementations for sets of objects connected together in some manner known as graphs. The three that I have implemented are directed graph, a weighted graph, and a normal graph. These can be found within the ImplementedGraphs directory. Each "node" is considered a vertex and they are connected to other nodes by edges. If one vertex is connected to another then they are considered neighbors. In the examples folder, there are some examples that will be explained that utilize the graphs and other data structures to solve specific problems. 
   
 ## Implemented Graphs
+
 ### Graph
   The first graph that is implemented is just a regular graph that is depicted as a dictionary of neighbors where the vertex is the key and it's value is a set of it's neighbors. We want to use a set here because the order does not matter and we can locate items in constant time. The Graph class has depth first search implemented which adds all vertices reachable from any vertex to a "marks" set. It also has breadth first search which maps all vertices to their parents along the shortest path from any vertex.
 
@@ -21,10 +22,11 @@
 
   
 ## Examples
-The examples contains huffmanTree.py, kclique.py, and transform.py. The Huffman Tree is implemented within the first file which builds a huffman tree based on given frequency inputs. The second file ultizes the normal graph implementation which finds if a certain graph has a clique of k size and returns True or False. The third file is a words transformer which if the user inputs a source word and a target word, it takes the user through the steps of changing that source word to the input word. This only works if both words are real words. 
+The examples contains huffmanTree.py, kclique.py, and transform.py. The Huffman Tree is implemented within the first file which builds a huffman tree based on given frequency inputs. The second file ultizes the normal graph implementation which finds if a certain graph has a clique of k size and returns True or False. The third file is a words transformer which if the user inputs a source word and a target word, it takes the user through the steps of changing that source word to the input word. This only works if both words are real english words or else it will continue to ask the user for input. 
 
 
 
 
 <sup>Directed Graph: https://www.geeksforgeeks.org/euler-circuit-directed-graph/ </sup>
+
 <sup>Weighted Graph: https://hyperskill.org/learn/step/5645 </sup>
